@@ -24,3 +24,5 @@ export interface FeedResponse {
     }[];
   };
 }
+
+export type PageSize = 5 | 10 | 25;

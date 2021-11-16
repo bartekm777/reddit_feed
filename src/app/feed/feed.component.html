@@ -1,1 +1,13 @@
-<p>feed works!</p>
+<div class="controls">
+  <button type="button" mat-button>Previous</button>
+  <button type="button" mat-button>Next</button>
+  <mat-form-field>
+    <mat-label>Page size</mat-label>
+    <mat-select [formControl]="pageSizeControl">
+      <mat-option *ngFor="let size of [5, 10, 25]" [value]="size">{{
+        size
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<app-post [post]="post" *ngFor="let post of feed?.posts"></app-post>

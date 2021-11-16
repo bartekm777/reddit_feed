@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, switchMap } from 'rxjs';
-import { Feed, FeedResponse } from '../model/app.model';
+import { Feed, FeedResponse, PageSize } from '../model/app.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +11,22 @@ export class FeedService {
 
   constructor(private readonly http: HttpClient) {}
 
-  getFeed(): Observable<Feed> {
+  getFeed(
+    pageSize: PageSize,
+    after?: string,
+    before?: string
+  ): Observable<Feed> {
     return this.http
-      .get<FeedResponse>(`https://www.reddit.com/r/${this.SUBREDDIT_NAME}.json`)
+      .get<FeedResponse>(
+        `https://www.reddit.com/r/${this.SUBREDDIT_NAME}.json`,
+        {
+          params: {
+            limit: pageSize,
+            after: after || '',
+            before: before || '',
+          },
+        }
+      )
       .pipe(
         switchMap((response) => {
           return of({

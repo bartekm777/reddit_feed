@@ -6,20 +6,25 @@ import { AppComponent } from './app.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './post/post.component';
 import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FeedComponent,
-    PostComponent,
-
-  ],
+  declarations: [AppComponent, FeedComponent, PostComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatCardModule,
+    MatButtonModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
