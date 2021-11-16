@@ -11,9 +11,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
-  declarations: [AppComponent, FeedComponent, PostComponent],
+  declarations: [AppComponent, FeedComponent, PostComponent, PostDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

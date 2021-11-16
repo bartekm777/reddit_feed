@@ -7,7 +7,7 @@ export interface Feed {
 export interface Post {
   name: string;
   thumbnail: string;
-  created: Date;
+  created: number;
   num_comments: number;
   author: string;
   score: number;

@@ -7,7 +7,7 @@ import { Feed, FeedResponse, PageSize } from '../model/app.model';
   providedIn: 'root',
 })
 export class FeedService {
-  private readonly SUBREDDIT_NAME = 'sweden';
+  private readonly SUBREDDIT_NAME = 'poland';
 
   constructor(private readonly http: HttpClient) {}
 

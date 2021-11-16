@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Post } from '../shared/model/app.model';
 
 @Component({
@@ -7,5 +7,9 @@ import { Post } from '../shared/model/app.model';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  @Input() post?: Post;
+  @Input() post!: Post;
+
+  get created() {
+    return new Date(this.post.created);
+  }
 }
